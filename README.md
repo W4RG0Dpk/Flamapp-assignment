@@ -91,54 +91,29 @@ For every candidate parameter set `(θ,M,X)`:
 
 Instead of approximating the correspondence using KDTree, the parameter `t` can be recovered analytically.
 
-Starting from
+let given equation be (1) and (2)
 
-\[
-x=t\cos(\theta)-e^{M|t|}\sin(0.3t)\sin(\theta)+X
-\]
+Multiply Equation (1) by cos(theta)
 
-\[
-y=42+t\sin(\theta)+e^{M|t|}\sin(0.3t)\cos(\theta)
-\]
+(x - X)cos(theta)
+= t*cos²(theta)
+- exp(M|t|)sin(0.3t)sin(theta)cos(theta)
 
-Multiply the first equation by \(\cos(\theta)\)
+Multiply Equation (2) by sin(theta)
 
-\[
-(x-X)\cos(\theta)
-=
-t\cos^2(\theta)
--
-e^{M|t|}\sin(0.3t)\sin(\theta)\cos(\theta)
-\]
-
-Multiply the second equation by \(\sin(\theta)\)
-
-\[
-(y-42)\sin(\theta)
-=
-t\sin^2(\theta)
-+
-e^{M|t|}\sin(0.3t)\cos(\theta)\sin(\theta)
-\]
+(y - 42)sin(theta)
+= t*sin²(theta)
++ exp(M|t|)sin(0.3t)cos(theta)sin(theta)
 
 Adding both equations,
 
 the exponential terms cancel,
 
-and using
+cos²(theta) + sin²(theta) = 1
 
-\[
-\cos^2(\theta)+\sin^2(\theta)=1
-\]
+Therefore,
 
-we obtain
-
-\[
-\boxed{
-t=(x-X)\cos(\theta)+(y-42)\sin(\theta)
-}
-\]
-
+t = (x - X)cos(theta) + (y - 42)sin(theta)
 This allows the latent parameter `t` to be estimated directly from every observed point.
 
 The recovered `t` is substituted back into the original equations to reconstruct the predicted curve, and Differential Evolution is again used to minimize the L1 error.
@@ -215,3 +190,6 @@ Every approach is evaluated using
 - Differential Evolution (`scipy.optimize.differential_evolution`)
 - Powell Optimization
 - Nelder-Mead Optimization
+
+# Look at the Source.ipynb for more explanation and walkthrough of how I solved it .
+install the above required libraries and just run all cells of ipynb after pulling the git repo
