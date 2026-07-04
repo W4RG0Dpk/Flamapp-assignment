@@ -156,6 +156,7 @@ Every approach is evaluated using
 - Recovering `t` analytically simplifies the optimization problem and eliminates nearest-neighbor matching.
 - The analytical formulation produced the best overall results.
 - Differential Evolution consistently outperformed the local optimization algorithms, indicating that the optimization landscape contains multiple local minima where local methods may converge prematurely.
+- Approach 2 had best L1=0.00147 with time= 0.404sec, While Nelder-Mead even though has slight more L1 , it has best least time for estimation which is 0.0159secs
 
 ---
 
