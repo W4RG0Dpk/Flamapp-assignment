@@ -6,13 +6,9 @@ The objective of this assignment is to estimate the unknown parameters of the gi
 
 The governing equations are
 
-\[
-x=t\cos(\theta)-e^{M|t|}\sin(0.3t)\sin(\theta)+X
-\]
+x = t*cos(theta) - exp(M*|t|)*sin(0.3*t)*sin(theta) + X
 
-\[
-y=42+t\sin(\theta)+e^{M|t|}\sin(0.3t)\cos(\theta)
-\]
+y = 42 + t*sin(theta) + exp(M*|t|)*sin(0.3*t)*cos(theta)
 
 Unknown parameters:
 
